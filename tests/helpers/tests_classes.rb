@@ -12,6 +12,7 @@ require 'awesome_print'
 
 SimpleCov.start
 SimpleCov.minimum_coverage(100)
+require './database/seeder'
 require './example_api'
 
 Minitest::Reporters.use!(Minitest::Reporters::SpecReporter.new)
@@ -22,6 +23,7 @@ module Tests
     class Test < Minitest::Test
       def run(*args, &block)
         Sequel.transaction([database], rollback: :always) do
+          Seeder.run_seeds!(:test)
           super
         end
       end
