@@ -4,6 +4,7 @@ require 'grape'
 
 require_relative 'exceptions/api_fail'
 require_relative 'exceptions/api_error'
+require_relative 'services/initialize'
 require_relative 'api_versions/v1/api'
 
 # Example Grape API
