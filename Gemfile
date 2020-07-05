@@ -9,6 +9,7 @@ source 'http://rubygems.org' do
   gem 'rake'
 
   group :development do
+    gem 'awesome_print'
     gem 'irb'
     gem 'rb-readline'
     gem 'rubocop'

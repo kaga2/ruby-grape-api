@@ -11,6 +11,7 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     ansi (1.5.0)
     ast (2.4.1)
+    awesome_print (1.8.0)
     builder (3.2.4)
     colorize (0.8.1)
     concurrent-ruby (1.1.6)
@@ -126,6 +127,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_print!
   colorize!
   dry-auto_inject!
   dry-container!
