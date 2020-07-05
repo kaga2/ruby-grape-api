@@ -8,6 +8,7 @@ source 'http://rubygems.org' do
   gem 'puma'
   gem 'rake'
   gem 'sequel'
+  gem 'sequel-seed'
 
   group :development do
     gem 'awesome_print'
