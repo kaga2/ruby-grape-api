@@ -21,8 +21,13 @@ module Tests
     # Class with methods to test
     class Test < Minitest::Test
       def run(*args, &block)
-        # TODO: Add database rollback
-        super
+        Sequel.transaction([database], rollback: :always) do
+          super
+        end
+      end
+
+      def database
+        Services[:database]
       end
     end
 
