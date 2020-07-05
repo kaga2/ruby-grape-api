@@ -1,12 +1,13 @@
 # frozen_string_literal: true
 
 source 'http://rubygems.org' do
-  gem 'dry-auto_inject'
+  gem 'config'
   gem 'dry-container'
   gem 'grape'
   gem 'pg'
   gem 'puma'
   gem 'rake'
+  gem 'sequel'
 
   group :development do
     gem 'awesome_print'
