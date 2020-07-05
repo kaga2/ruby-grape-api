@@ -1,0 +1,40 @@
+name: Pull Request Workflow
+
+on:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  unit_tests:
+    runs-on: ubuntu-16.04
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@ec106b438a1ff6ff109590de34ddc62c540232e0
+      with:
+        ruby-version: 2.6
+
+    - name: Install bundle gem
+      run: gem install bundler:2.1.4
+
+    - name: Install dependencies
+      run: bundle install
+
+    - name: Run tests
+      run: bundle exec rake unit_tests
+
+  code_quality:
+    runs-on: ubuntu-16.04
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@ec106b438a1ff6ff109590de34ddc62c540232e0
+        with:
+          ruby-version: 2.6
+ 
+      - name: Rubocop check
+        run: gem install rubocop && rubocop
