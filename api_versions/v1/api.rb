@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'routes/example'
+require_relative 'resources/example'
 require_relative 'response_decorators/jsend'
 
 module APIVersions
