@@ -1,0 +1,4 @@
+# RubyMine files
+.idea/
+# SimpleCov report
+coverage/
